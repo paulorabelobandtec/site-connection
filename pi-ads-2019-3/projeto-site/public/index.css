@@ -1,0 +1,248 @@
+/* Nav bar */
+body{
+    overflow-x: hidden;
+   
+}
+.preto{
+    width: 100%;
+
+}
+a{
+    text-decoration: none;
+    color: rgb(0, 0, 0);
+}
+/* slides */
+
+
+.texto li{
+    list-style: none;
+    margin-left: 5vh;
+    
+}
+
+.menu{
+    float: left;
+    width: 100vw;
+    height: 60px;
+    background-color:#fff ;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    font-family:'Roboto Slab', serif;
+    box-shadow: 2px 2px 5px rgb(190, 190, 190);
+    
+}
+.texto{
+    display: flex;
+    
+    
+}
+
+
+
+/* Barra-banner */
+.banner-barra{
+    width: 100vw;
+    height: 30vh;
+    background-color: #0A141E;
+}
+.logo img{
+    width: 10vw;
+    height: 15vh;
+    margin-bottom: 4vh;
+}
+.imagen{
+    background-image:url(./imagens/leaf-3369412_1280.jpg);
+    background-repeat: no-repeat;
+    background-size:cover ;
+width: 100vw;
+height: 100vh;
+}
+.imagen img{
+    width: 100%;
+    height: 100%;
+}
+.chico{
+    font-family: 'Cabin', sans-serif;
+    font-size: 35px;
+    color: white;
+    float: right;
+    margin-right: 30px;
+    margin-top: 30vh;
+
+}
+
+.textoambi{
+    font-family:'Roboto Slab', serif;
+    text-align: center;
+    font-size: 60px;
+    color:#0A141E ;
+    margin-top: 10vh;
+}
+.textoambi1{
+    font-family:'Roboto Slab', serif;
+    float: left;
+    color:#0A141E ;
+    font-size: 20px;
+    width: 50vw;
+    margin-left: 25vw;
+    text-align: center;
+    margin-top: 5vh;
+}
+
+.quadrado1{
+    width: 11.5vw;
+    height:21vh ;
+    transition: all 0.4s ease-out;
+    border: 3px black solid;
+    border-radius: 4px;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    font-family:'Roboto Slab', serif;
+    
+    
+    
+    
+}
+
+.quadrado1 img{
+    max-width: 80%;
+    max-height: 70%;
+    
+    
+}
+
+.quadrado2{
+    width: 11.5vw;
+    height:21vh ;
+    transition: all 0.4s ease-out;
+    border: 3px black solid;
+    border-radius: 4px;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    font-family:'Roboto Slab', serif;
+    
+    
+}
+.quadrado2 img{
+    width: 70%;
+    max-height: 70%;
+    margin-top: 2px;
+    
+    
+}
+.quadrado3{
+    width: 11.5vw;
+    height:21vh ;
+    transition: all 0.4s ease-out;
+    border: 3px black solid;
+    border-radius: 4px;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    font-family:'Roboto Slab', serif;
+}
+.quadrado3 img{
+    width: 75%;
+    max-height: 70%;
+    margin-top: 2px;
+    
+}
+.quadrado4{
+    width: 11.5vw;
+    height:21vh ;
+    transition: all 0.4s ease-out;
+    border: 3px black solid;
+    border-radius: 4px;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    font-family:'Roboto Slab', serif;
+    
+}
+.quadrado4 img{
+    
+    width: 65%;
+    max-height: 70%;
+    margin-top: 2px;
+    
+}
+
+.quadrado1:hover{
+    cursor: pointer;
+    transform: translateY(-10px);
+    box-shadow: 4px 30px 16px 0px rgba(50,50,50, 0.45);
+}
+.quadrado2:hover{
+    cursor: pointer;
+    transform: translateY(-10px);
+    box-shadow: 4px 30px 16px 0px rgba(50,50,50, 0.45);
+}
+.quadrado3:hover{
+    cursor: pointer;
+    transform: translateY(-10px);
+    box-shadow: 4px 30px 16px 0px rgba(50,50,50, 0.45);
+}
+.quadrado4:hover{
+    cursor: pointer;
+    transform: translateY(-10px);
+    box-shadow: 4px 30px 16px 0px rgba(50,50,50, 0.45);
+}
+
+.quadrados{
+    float: left;
+    width: 80vw;
+    display: flex;
+    justify-content: center;
+    margin-top: 10vh;
+    justify-content: space-around;
+    margin-left: 10vw;
+    
+}
+.cor-saiba-mais{
+    
+   align-items: center;
+    margin-top: 390px;
+    width:80vw;
+    height: 50vh;
+    background-color: rgb(245, 239, 239);
+    display: flex;
+    font-family:'Roboto Slab', serif;
+    margin-left: 10vw;
+    border-radius:5px ;
+    
+  
+}
+.saiba-mais{
+   margin-left: 5vh;
+   width: 40vw;
+   text-align: justify;
+    
+}
+
+.fotoo img{
+    border-radius: 10px;
+    margin-left: 5vw;
+    width: 35vw;
+    height: 50vh;
+    
+}
+.cor-footer{
+    margin-top: 5vh;
+    height: 30vw;
+    width: 100vw;
+    background-color: #2f2f2f;
+    display: flex;
+    justify-content: space-around;
+}
+.informacoes{
+    color: rgb(212, 209, 209);
+    margin-top: 70px;
+}
+.mapa{
+    font-family:'Roboto Slab', serif;
+    font-size: 25px;
+    color: rgb(212, 209, 209);
+}

@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="normalize.css">
+    <link rel="stylesheet" href="dados.css">
+    <link href="https://fonts.googleapis.com/css?family=Roboto+Slab&display=swap" rel="stylesheet">
+    <title>Document</title>
+    <script type="text/javascript" src="https://www.chartjs.org/dist/2.8.0/Chart.min.js"></script>
+    <script type="text/javascript" src="https://www.chartjs.org/samples/latest/utils.js"></script>
+    <style>
+            #imagem {
+                width: 80vw;
+                height: 70vh;
+                float: right;
+            }
+    
+            #teste {
+                background-image: url('./grafico2/5.png');
+                width: 45%;
+                background-size: cover;
+                background-position-x: 42%;
+                position: relative;
+            }
+            #msg {
+                font-size: 24pt;
+                font-family: sans-serif;
+                position: absolute;
+                bottom: -10%;
+                left: 5%;
+                width: 100%;
+                text-align: center;
+            }
+        </style>
+    
+</head>
+<body>
+    <header class="menu">
+        <a class="logo" href="index.html">
+            <img src="./imagens/ambitec (1).png" alt="">
+        </a>
+        <nav>
+            <ul class="texto">
+                <li><a href="index.html">Inicio</a></li>
+                <li><a href="produto.html">Produto</a></li>
+                <li><a href="dados.html">Dados</a></li>
+                <li><a href="login.html">Login</a></li>
+                
+            </ul>
+            
+        </nav><br><br><br><br><br>
+        <div>
+                Olá, <b id="b_usuario"></b>
+                <a href="#" onclick="logoff()" style="color:maroon">[Sair]</a>
+        
+            </div>
+    </header>
+    <div class="quadrados">
+            <div class="quadrado1">
+                
+                <p>Lixeira: 1</p>
+            </div>
+            <div class="quadrado2">
+               
+                <p>Lixeira: 2</p>
+            </div>
+            <div class="quadrado3">
+                
+                <p>Lixeira: 3</p>
+            </div>
+            
+            
+
+        </div>
+        <div style="display: flex; width: 100%;">
+                <div style="width:80%; height: 70vh">
+                    <div id="div_aguarde">Dados sendo obtidos...</div>
+                    <canvas id="canvas_grafico"></canvas>
+                </div>
+                <div id="teste">
+                    <div id="msg">Vazia</div>
+                </div>
+        
+            </div>
+            <script src="funcoes.js"></script>
+            <script src="grafico.js"></script>
+            <footer>
+     <div class="cor-footer">
+         <div class="mapa">
+             <p>Localização</p>
+                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3657.240714606833!2d-46.665863285543175!3d-23.559796667418478!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94ce59d31a6216f5%3A0xe9a99d39c6039704!2sRua%20Haddock%20Lobo%20-%20Cerqueira%20C%C3%A9sar%2C%20S%C3%A3o%20Paulo%20-%20SP!5e0!3m2!1spt-BR!2sbr!4v1575566876131!5m2!1spt-BR!2sbr" width="400" height="250" frameborder="0" style="border:0;" allowfullscreen=""></iframe>
+         </div>
+         <div class="informacoes">
+                <h3>Rio de Janeiro</h3> 
+            
+                Telefone RJ: 21 2613-6155<br>
+                Email: Suporte.ambihelp@gmail.com<br><br>
+                
+                Ambitec - Rio de Janeiro<br>
+                Rua Teófilo Otoni, 82 - 21º andar<br>
+                Centro – Rio de Janeiro/RJ<br>
+
+         </div>
+         <div class="informacoes">
+                <h3>São Paulo</h3>
+                Telefone SP: 11 5589-1115<br>
+                Email: Suporte.ambihelp@gmail.com<br><br>
+
+                PrimeUP - São Paulo<br>
+                Rua Haddock Lobo, 337, CJ 41b<br>
+                Cerqueira Cesar – São Paulo/SP<br>
+
+         </div>
+         
+
+     </div>
+     
+    </footer>
+    
+</body>
+</html>
+<script>
+
+        function contar() {
+    
+            fetch('/leituras/ultimas', { cache: 'no-store' }).then(function (response) {
+                if (response.ok) {
+                    response.json().then(function (resposta) {
+    
+                        console.log(`Dados recebidos: ${JSON.stringify(resposta)}`);
+    
+                        // resposta.reverse();
+    
+                        //for (i = 0; i < resposta.length; i++) {
+                        var registro = resposta[0];
+                        var resetar = registro[0].Soma % 20;
+    
+                        
+                        if (resetar <= 20) {
+    
+                            if (resetar === 0) {
+                                teste.style.backgroundImage = "url('./grafico2/10.png')";
+                                
+                            } else if (resetar === 3) {
+                                teste.style.backgroundImage = "url('./grafico2/15.png')";
+                            } else if (resetar === 4) {
+                                teste.style.backgroundImage = "url('./grafico2/20.png')";
+                            } else if (resetar === 5) {
+                                teste.style.backgroundImage = "url('./grafico2/25.png')";
+                            } else if (resetar === 6) {
+                                teste.style.backgroundImage = "url('./grafico2/30.png')";
+                            } else if (resetar === 7) {
+                                teste.style.backgroundImage = "url('./grafico2/35.png')";
+                            } else if (resetar === 8) {
+                                teste.style.backgroundImage = "url('./grafico2/40.png')";
+                            } else if (resetar === 9) {
+                                teste.style.backgroundImage = "url('./grafico2/45.png')";
+                            } else if (resetar === 10) {
+                                teste.style.backgroundImage = "url('./grafico2/50.png')";
+                            } else if (resetar === 11) {
+                                teste.style.backgroundImage = "url('./grafico2/55.png')";
+                            } else if (resetar === 12) {
+                                teste.style.backgroundImage = "url('./grafico2/60.png')";
+                            } else if (resetar === 13) {
+                                teste.style.backgroundImage = "url('./grafico2/65.png')";
+                            } else if (resetar === 14) {
+                                teste.style.backgroundImage = "url('./grafico2/70.png')";
+                            } else if (resetar === 15) {
+                                teste.style.backgroundImage = "url('./grafico2/75.png')";
+                            } else if (resetar === 16) {
+                                teste.style.backgroundImage = "url('./grafico2/80.png')";
+                            } else if (resetar === 17) {
+                                teste.style.backgroundImage = "url('./grafico2/85.png')";
+                            } else if (resetar === 18) {
+                                teste.style.backgroundImage = "url('./grafico2/90.png')";
+                            } else if (resetar === 19) {
+                                teste.style.backgroundImage = "url('./grafico2/95.png')";
+                            } else if (resetar === 20) {
+                                teste.style.backgroundImage = "url('./grafico2/100.png')";
+                            }
+    
+                            if (resetar < 1){
+                                msg.innerHTML = 'Vazia';
+                            } else if (resetar < 10){
+                                msg.innerHTML = 'Em uso';
+                            } else if (resetar == 10){
+                                msg.innerHTML = 'Meio Cheia ou Meio Vazia?';
+                            } else if (resetar < 15){
+                                msg.innerHTML = 'Ficando Cheia';
+                            } else if (resetar < 18){
+                                msg.innerHTML = 'Lixeira Cheia! Trocar!';
+                            } else if (resetar < 19){
+                                msg.innerHTML = 'Lixeira Cheia! Trocar Urgentemente!';
+                            } else {
+                                msg.innerHTML = 'Lotada';
+                            }
+                        }
+    
+    
+                        // aqui, após 'registro.' use os nomes 
+                        // dos atributos que vem no JSON 
+                        // que gerou na consulta ao banco de dados
+    
+                        /*dados.labels.push(registro.dataHora);
+    
+                        dados.datasets[0].data.push(registro.vTopo);
+                        dados.datasets[1].data.push(registro.vTopo);
+                        }
+                        console.log(JSON.stringify(dados));
+    
+                        div_aguarde.style.display = 'none';*/
+    
+                        //plotarGrafico(dados);
+                    });
+                } else {
+                    console.error('Nenhum dado encontrado ou erro na API');
+                }
+            })
+                .catch(function (error) {
+                    console.error(`Erro na obtenção dos dados p/ gráfico: ${error.message}`);
+                });
+            setTimeout(contar, 1000);
+        }
+    
+    
+    
+    
+        function iniciar() {
+            contar();
+            atualizarGrafico();
+        }
+        window.onload = iniciar();
+    </script>

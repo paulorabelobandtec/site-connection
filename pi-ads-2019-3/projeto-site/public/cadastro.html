@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="cadastro.css">
+    <link rel="stylesheet" href="normalize.css">
+    <link href="https://fonts.googleapis.com/css?family=Roboto+Slab&display=swap" rel="stylesheet">
+    <title>Document</title>
+</head>
+<body>
+     <header class="menu">
+          <a class="logo" href="index.html">
+            <img src="./imagens/ambitec (1).png" alt="">
+        </a>
+        <nav>
+            <ul class="texto">
+                <li><a href="index.html">Inicio</a></li>
+                <li><a href="#">Produto</a></li>
+                <li><a href="#">Dados</a></li>
+                <li><a href="login.html">Login</a></li>
+                
+            </ul>
+            
+        </nav>
+    </header>
+    <div class="fotinhaFundo"></div>
+    <div class="borda" >
+        <h1 class="top">CADASTRAR</h1>
+        <form action="" class="texto_caixa" id="form_cadastro" method="post"></form>
+        <div class="login">
+            <label class="label" >E-mail</label> 
+            
+            <input class="input" type="text" placeholder="E-mail" name="email" required>
+        </div> 
+        <div class="login">
+            <label class="label" >Nome</label> 
+            
+            <input class="input" type="text"placeholder="Nome" name="nome" required>
+        </div> 
+        
+        <div class="senha">
+            <label class="label">Senha</label> 
+            <input class="input" type="password" placeholder="Senha" id="senha" name="senha" required >
+        </div>   
+      
+        <div class="botao">
+            <button type="button" class="efeitoBotao"id="btn_entrar" type="button" onclick="cadastrar"() > CADASTRAR</button>
+        </div>
+    </form>
+       
+        
+        
+    </div>
+</div>
+</body>
+</html>
+<script>
+
+    function cadastrar() {
+        aguardar();
+        var formulario = new URLSearchParams(new FormData(form_cadastro));
+        fetch('/usuarios/cadastrar', {
+            method: "POST",
+            body: formulario
+        }).then(function (response) {
+            
+            if (response.ok) {
+
+                window.location.href='./login.html';
+
+            } else {
+
+                console.log('Erro de cadastro!');
+                response.text().then(function (resposta) {
+                    div_erro.innerHTML = resposta;
+                });
+                finalizar_aguardar();
+            }
+        });
+
+        return false;
+    }
+
+    function aguardar() {
+        btn_entrar.disabled = true;
+        img_aguarde.style.display='block';
+        div_erro.style.display='none';
+    }
+
+    function finalizar_aguardar() {
+        btn_entrar.disabled = false;
+        img_aguarde.style.display='none';
+        div_erro.style.display='block';
+    }
+
+</script>
